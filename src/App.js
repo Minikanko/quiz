@@ -44,7 +44,12 @@ function App() {
           <SubHeader>토이프로젝트 퀴즈쇼</SubHeader>
           <PinkButton text='테스트 시작' clickEvent={()=>dispatch(next())}/>
         </Main>}
-      
+      {page > 0 && (
+        <Main>
+          <Quiz/>
+        </Main>
+      )
+      }
     </>
   );
 }
