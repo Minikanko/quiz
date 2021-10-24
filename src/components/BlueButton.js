@@ -42,9 +42,8 @@ const MyButton = styled.a`
 `;
 
 
-export function BlueButton({text, key}){
+export function BlueButton({text, key, clickEvent}){
     return(
-        
-        <MyButton key={key}>{text}</MyButton>
+        <MyButton key={key} onClick={clickEvent}>{text}</MyButton>
     )
 }
