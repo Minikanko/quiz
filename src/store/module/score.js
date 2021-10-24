@@ -191,7 +191,7 @@ export default function score (state=initialState, action) {
         case NEXT_PAGE:
             return {
                 ...state,
-                page: state.page++,
+                page: state.page+1,
             }
         case IS_REPLAY:
             return {
