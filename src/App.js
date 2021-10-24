@@ -3,6 +3,7 @@ import { PinkButton } from './components/PinkButton';
 import { next } from './store/module/score';
 import styled from 'styled-components';
 import Quiz from './components/Quiz';
+import { Result } from './components/Result';
 
 const Main = styled.main`
   width: 100%;
@@ -33,6 +34,7 @@ const Score = styled.div`
 
 function App() {
   const page = useSelector(state =>state.score.page);
+  const quizs = useSelector(state => state.score.quizs);
   const dispatch = useDispatch();
 
   return (
@@ -44,11 +46,12 @@ function App() {
           <SubHeader>토이프로젝트 퀴즈쇼</SubHeader>
           <PinkButton text='테스트 시작' clickEvent={()=>dispatch(next())}/>
         </Main>}
-      {page > 0 && (
+      {page > quizs.length && (<Main><Result/></Main>)}
+      {page > 0 && page<=quizs.length && (
         <Main>
           <Quiz/>
         </Main>
-      )
+       )
       }
     </>
   );
