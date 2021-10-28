@@ -1,6 +1,6 @@
+import { ReactNode } from 'react';
 import styled from 'styled-components'
-
-
+import { JsxElement } from 'typescript';
 
 const MyButton = styled.a`
   display: block;
@@ -41,8 +41,13 @@ const MyButton = styled.a`
   }
 `;
 
+interface IProps {
+  text: string;
+  key: string;
+  clickEvent: () => void
+}
 
-export function BlueButton({text, key, clickEvent}){
+export function BlueButton({text, key, clickEvent}: IProps):ReactNode {
     return(
         <MyButton key={key} onClick={clickEvent}>{text}</MyButton>
     )

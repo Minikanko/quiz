@@ -1,4 +1,4 @@
-import { GreenButton } from "./GreenButton";
+import { PinkButton } from "./PinkButton";
 import { useSelector, useDispatch } from "react-redux";
 import styled from "styled-components";
 import { replay } from "../store/module/score";
@@ -15,7 +15,7 @@ export const Result = () => {
   return (
     <>
     <Score>{scoreText}</Score>
-      <GreenButton text="재도전" clickEvent={()=>{
+      <PinkButton text="재도전" clickEvent={()=>{
           dispatch(replay());
       }}/>
     </>

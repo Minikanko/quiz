@@ -41,6 +41,11 @@ const MyButton=styled.a`
     transform: translateY(0.25em);
     }`;
 
-export function PinkButton({text,clickEvent}){
+    interface IProps{
+        text: string;
+        clickEvent: () => void
+    }
+
+export function PinkButton({text,clickEvent}: IProps){
     return <MyButton onClick={clickEvent}>{text}</MyButton>
 }
